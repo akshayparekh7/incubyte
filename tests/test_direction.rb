@@ -73,4 +73,12 @@ class DirectionTest < Minitest::Test
     @direction.turn_down
     assert_equal 'Down', @direction.facing
   end
+
+  def turn_left_from_up
+    @direction = Direction.new('E')
+    @direction.turn_right
+    @direction.turn_up
+    @direction.turn_right
+    assert_equal 'W', @direction.facing
+  end
 end
