@@ -25,7 +25,7 @@ class PositionTest < Minitest::Test
   end
 
   def test_move_south
-    @position = Position.new(0, 0, 0)
+    @position = Position.new(0, 0, 0, [-10,-10,-10], [10,10,10])
     @position.move_backward('S')
     assert_equal 0, @position.x
     assert_equal(-1, @position.y)
@@ -41,7 +41,7 @@ class PositionTest < Minitest::Test
   end
 
   def test_move_west
-    @position = Position.new(0, 0, 0)
+    @position = Position.new(0, 0, 0, [-10,-10,-10], [10,10,10])
     @position.move_backward('W')
     assert_equal(-1, @position.x)
     assert_equal 0, @position.y
@@ -57,7 +57,7 @@ class PositionTest < Minitest::Test
   end
 
   def test_move_down
-    @position = Position.new(0, 0, 0)
+    @position = Position.new(0, 0, 0, [-10,-10,-10], [10,10,10])
     @position.move_backward('Down')
     assert_equal 0, @position.x
     assert_equal 0, @position.y
@@ -65,7 +65,7 @@ class PositionTest < Minitest::Test
   end
 
   def test_multiple_positions
-    @position = Position.new(0, 0, 0)
+    @position = Position.new(0, 0, 0, [-10,-10,-10], [10,10,10])
     @position.move_forward('N')
     # Position should now be [0,1,0]
     @position.move_forward('Up')
